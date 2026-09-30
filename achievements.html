@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="IEEE CS MBITS Achievements — count-up stats, awards, and our chapter timeline from 2021 to present."/>
+  <title>Achievements | IEEE CS MBITS</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="css/style.css"/>
+</head>
+<body>
+  <div class="cursor-dot" aria-hidden="true"></div>
+  <div class="cursor-outline" aria-hidden="true"></div>
+  <div class="scroll-progress" role="progressbar" aria-label="Scroll progress" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+  <canvas id="bg-canvas" aria-hidden="true"></canvas>
+
+  <header class="nav-header" role="banner">
+    <nav class="nav-container" aria-label="Main navigation">
+      <a href="index.html" class="nav-logo" aria-label="IEEE CS MBITS Home">
+        <svg class="logo-icon" viewBox="0 0 44 44" width="44" height="44" aria-hidden="true">
+          <defs>
+            <linearGradient id="logoGradAch" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#0082CC"/>
+              <stop offset="100%" stop-color="#00629B"/>
+            </linearGradient>
+          </defs>
+          <rect width="44" height="44" rx="10" fill="url(#logoGradAch)"/>
+          <polygon points="22,6 38,22 22,38 6,22" fill="none" stroke="#ffffff" stroke-width="2.2" stroke-linejoin="round"/>
+          <path d="M14 22 L22 14 L30 22 L22 30 Z" fill="rgba(255,255,255,0.2)"/>
+          <circle cx="22" cy="22" r="3" fill="#E5A93C"/>
+          <path d="M22 10 L22 34 M10 22 L34 22" stroke="rgba(255,255,255,0.4)" stroke-width="1.2"/>
+        </svg>
+        <div style="display:flex;flex-direction:column;text-align:left;">
+          <span class="logo-text">IEEE CS <span class="accent">MBITS</span></span>
+          <span style="font-size:0.65rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--text-muted);font-weight:600;margin-top:-2px;">Student Branch Chapter</span>
+        </div>
+      </a>
+      <ul class="nav-links" role="list"><li><a href="index.html" class="nav-link">Home</a></li><li><a href="about.html" class="nav-link">About</a></li><li><a href="events.html" class="nav-link">Events</a></li><li><a href="achievements.html" class="nav-link active">Achievements</a></li><li><a href="gallery.html" class="nav-link">Gallery</a></li><li><a href="team.html" class="nav-link">Team</a></li><li><a href="contact.html" class="nav-link">Contact</a></li></ul>
+      <div class="nav-controls"><button id="theme-toggle" class="btn-icon" aria-label="Toggle theme"><svg class="icon-moon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg><svg class="icon-sun" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg></button><button id="hamburger" class="btn-icon hamburger" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobile-menu"><span class="ham-line"></span><span class="ham-line"></span><span class="ham-line"></span></button></div>
+    </nav>
+    <div id="mobile-menu" class="mobile-menu" aria-hidden="true"><ul class="mobile-nav-links" role="list"><li><a href="index.html" class="mobile-nav-link">Home</a></li><li><a href="about.html" class="mobile-nav-link">About</a></li><li><a href="events.html" class="mobile-nav-link">Events</a></li><li><a href="achievements.html" class="mobile-nav-link active">Achievements</a></li><li><a href="gallery.html" class="mobile-nav-link">Gallery</a></li><li><a href="team.html" class="mobile-nav-link">Team</a></li><li><a href="contact.html" class="mobile-nav-link">Contact</a></li></ul></div>
+  </header>
+
+  <main id="main-content">
+    <section class="page-hero" aria-labelledby="ach-heading">
+      <div class="page-hero-content">
+        <nav class="breadcrumb" aria-label="Breadcrumb"><a href="index.html">Home</a><span class="breadcrumb-sep" aria-hidden="true">›</span><span aria-current="page">Achievements</span></nav>
+        <div class="page-hero-eyebrow reveal-fade">Our Impact</div>
+        <h1 id="ach-heading" class="page-hero-title heading-reveal">By the Numbers</h1>
+        <div class="line-reveal" style="margin:20px 0 24px;width:80px;"></div>
+        <p class="page-hero-desc reveal-up">Five years of excellence, award-winning performance, and a community that keeps growing. Here's what we've built together.</p>
+      </div>
+    </section>
+
+    <section class="section achievements-section" aria-label="Achievements">
+      <div class="container">
+
+        <!-- Count-up stats -->
+        <div class="stats-grid" data-stagger data-stagger-base="0" data-stagger-step="0.1">
+          <div class="stat-card glass-card stagger-item" aria-label="120 plus active members"><div class="stat-number" data-target="120" aria-live="polite">0</div><div class="stat-suffix">+</div><div class="stat-label">Active Members</div></div>
+          <div class="stat-card glass-card stagger-item" aria-label="40 plus events"><div class="stat-number" data-target="40" aria-live="polite">0</div><div class="stat-suffix">+</div><div class="stat-label">Events Conducted</div></div>
+          <div class="stat-card glass-card stagger-item" aria-label="15 awards"><div class="stat-number" data-target="15" aria-live="polite">0</div><div class="stat-suffix"></div><div class="stat-label">Awards Won</div></div>
+          <div class="stat-card glass-card stagger-item" aria-label="5 years"><div class="stat-number" data-target="5" aria-live="polite">0</div><div class="stat-suffix">+</div><div class="stat-label">Years of Excellence</div></div>
+          <div class="stat-card glass-card stagger-item" aria-label="300 plus event participants"><div class="stat-number" data-target="300" aria-live="polite">0</div><div class="stat-suffix">+</div><div class="stat-label">Event Participants</div></div>
+          <div class="stat-card glass-card stagger-item" aria-label="Global top 100 in IEEEXtreme"><div class="stat-number" data-target="100" aria-live="polite">0</div><div class="stat-suffix"></div><div class="stat-label">Global Rank (IEEEXtreme)</div></div>
+        </div>
+
+        <!-- Awards highlight -->
+        <div style="margin:64px 0;">
+          <div class="section-label reveal-up">Recognition</div>
+          <h2 class="section-title reveal-up">Awards &amp; <span class="text-gradient">Honours</span></h2>
+          <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:16px;margin-top:12px;" data-stagger data-stagger-base="0" data-stagger-step="0.1">
+            <div class="glass-card stagger-item award-card reveal-zoom" tabindex="0" role="button" aria-label="Award: Best Student Branch 2023">
+              <div class="award-icon" aria-hidden="true">&#127942;</div>
+              <div><h3 style="font-family:var(--font-display);font-size:1rem;font-weight:600;margin-bottom:6px;">Best Student Branch 2023</h3><p style="font-size:0.85rem;color:var(--text-secondary);line-height:1.5;">Awarded by IEEE Kerala Section for outstanding community engagement and event excellence.</p></div>
+            </div>
+            <div class="glass-card stagger-item award-card reveal-zoom" tabindex="0" role="button" aria-label="Award: IEEEXtreme Global Top 100">
+              <div class="award-icon" aria-hidden="true">&#127758;</div>
+              <div><h3 style="font-family:var(--font-display);font-size:1rem;font-weight:600;margin-bottom:6px;">IEEEXtreme Global Top 100</h3><p style="font-size:0.85rem;color:var(--text-secondary);line-height:1.5;">MBITS teams placed in the global top 100 in IEEEXtreme 19.0 — a world-class 24-hour coding competition.</p></div>
+            </div>
+            <div class="glass-card stagger-item award-card reveal-zoom" tabindex="0" role="button" aria-label="Recognition: Research Publications">
+              <div class="award-icon" aria-hidden="true">&#128203;</div>
+              <div><h3 style="font-family:var(--font-display);font-size:1rem;font-weight:600;margin-bottom:6px;">Research Publications</h3><p style="font-size:0.85rem;color:var(--text-secondary);line-height:1.5;">3 member-authored papers published at IEEE conferences. Encouraging the research culture at MBITS.</p></div>
+            </div>
+            <div class="glass-card stagger-item award-card reveal-zoom" tabindex="0" role="button" aria-label="Award: Outstanding Event Award">
+              <div class="award-icon" aria-hidden="true">&#128276;</div>
+              <div><h3 style="font-family:var(--font-display);font-size:1rem;font-weight:600;margin-bottom:6px;">Outstanding Event Award</h3><p style="font-size:0.85rem;color:var(--text-secondary);line-height:1.5;">CodeStorm 2024 recognized as one of the best inter-collegiate hackathons by IEEE R10 reviewers.</p></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- CHAPTER EVOLUTION MILESTONE MATRIX (MODERN ALTERNATIVE TO PINNED LINE) -->
+        <div class="milestones-wrapper reveal-fade" aria-label="Chapter Evolution Milestones">
+          <div style="text-align:center;max-width:680px;margin:0 auto 36px;">
+            <div class="section-label" style="justify-content:center;">Evolution Roadmap</div>
+            <h2 class="section-title">Our Legacy of <span class="text-gradient">Innovation (2021–2026)</span></h2>
+            <div class="line-reveal" style="width:72px;margin:16px auto 20px;"></div>
+            <p style="color:var(--text-secondary);font-size:0.95rem;line-height:1.7;">
+              From a 25-member founding cohort to one of Kerala's premier IEEE Student Branch Chapters. Explore our year-by-year milestones with interactive 3D zoom inspection.
+            </p>
+          </div>
+
+          <!-- Interactive Era Filter Bar -->
+          <div class="milestone-filter-bar" role="tablist" aria-label="Filter milestones by era">
+            <button class="milestone-filter-btn active" data-era="all" role="tab" aria-selected="true">All Eras</button>
+            <button class="milestone-filter-btn" data-era="2021" role="tab" aria-selected="false">2021 &bull; Inception</button>
+            <button class="milestone-filter-btn" data-era="2022" role="tab" aria-selected="false">2022 &bull; Hackathon</button>
+            <button class="milestone-filter-btn" data-era="2023" role="tab" aria-selected="false">2023 &bull; Best Chapter</button>
+            <button class="milestone-filter-btn" data-era="2024" role="tab" aria-selected="false">2024 &bull; 100+ Cohort</button>
+            <button class="milestone-filter-btn" data-era="2025" role="tab" aria-selected="false">2025 &bull; Global Top 100</button>
+            <button class="milestone-filter-btn" data-era="2026" role="tab" aria-selected="false">2026 &bull; WebNova Era</button>
+          </div>
+
+          <!-- Milestones Card Grid (Zoom-in Bento Format) -->
+          <div class="milestone-grid" id="milestone-grid" data-stagger data-stagger-base="0" data-stagger-step="0.08">
+
+            <!-- 2021 -->
+            <article class="milestone-card glass-card stagger-item reveal-zoom tilt-card" data-era="2021" aria-label="Milestone 2021: Chapter Inception">
+              <div>
+                <div class="milestone-card-header">
+                  <span class="milestone-year-badge">2021</span>
+                  <div style="display:flex;align-items:center;gap:8px;">
+                    <span class="milestone-tag">Inception &bull; Charter</span>
+                    <span class="milestone-zoom-hint" aria-hidden="true">&#x1F50D; Zoom</span>
+                  </div>
+                </div>
+                <h3 class="milestone-title">Chapter Founded &amp; Chartered</h3>
+                <p class="milestone-desc">
+                  IEEE CS MBITS Student Branch officially chartered with 25 passionate founding student engineers. Established under IEEE Region 10 and Kerala Section with guidance from the CSE Department.
+                </p>
+              </div>
+              <div class="milestone-footer">
+                <span class="milestone-meta-chip">🚩 25 Charter Members</span>
+                <span>IEEE Region 10</span>
+              </div>
+            </article>
+
+            <!-- 2022 -->
+            <article class="milestone-card glass-card stagger-item reveal-zoom tilt-card" data-era="2022" aria-label="Milestone 2022: CodeStorm 1.0">
+              <div>
+                <div class="milestone-card-header">
+                  <span class="milestone-year-badge">2022</span>
+                  <div style="display:flex;align-items:center;gap:8px;">
+                    <span class="milestone-tag">State Hackathon</span>
+                    <span class="milestone-zoom-hint" aria-hidden="true">&#x1F50D; Zoom</span>
+                  </div>
+                </div>
+                <h3 class="milestone-title">CodeStorm 1.0 State Hackathon</h3>
+                <p class="milestone-desc">
+                  Hosted our inaugural inter-collegiate hackathon attracting 300+ developers from across Kerala engineering colleges. Cemented MBITS as an emerging hub for competitive programming and open software.
+                </p>
+              </div>
+              <div class="milestone-footer">
+                <span class="milestone-meta-chip">⚡ 300+ Coders</span>
+                <span>MBITS Campus</span>
+              </div>
+            </article>
+
+            <!-- 2023 -->
+            <article class="milestone-card glass-card stagger-item reveal-zoom tilt-card" data-era="2023" aria-label="Milestone 2023: Best Student Branch">
+              <div>
+                <div class="milestone-card-header">
+                  <span class="milestone-year-badge" style="background:rgba(200,132,58,0.2);border-color:var(--accent);color:var(--accent);">2023</span>
+                  <div style="display:flex;align-items:center;gap:8px;">
+                    <span class="milestone-tag" style="color:var(--accent);">Section Winner</span>
+                    <span class="milestone-zoom-hint" aria-hidden="true">&#x1F50D; Zoom</span>
+                  </div>
+                </div>
+                <h3 class="milestone-title">Best IEEE CS Student Branch</h3>
+                <p class="milestone-desc">
+                  Recognized as the <strong>Best Student Branch Chapter</strong> in the entire IEEE Kerala Section for outstanding community technical workshops, member retention, and academic conference contributions.
+                </p>
+              </div>
+              <div class="milestone-footer">
+                <span class="milestone-meta-chip" style="border-color:var(--border-accent);color:var(--accent);">🏆 Kerala Section Award</span>
+                <span>Gold Honor</span>
+              </div>
+            </article>
+
+            <!-- 2024 -->
+            <article class="milestone-card glass-card stagger-item reveal-zoom tilt-card" data-era="2024" aria-label="Milestone 2024: 100 Members Milestone">
+              <div>
+                <div class="milestone-card-header">
+                  <span class="milestone-year-badge">2024</span>
+                  <div style="display:flex;align-items:center;gap:8px;">
+                    <span class="milestone-tag">Community Scale</span>
+                    <span class="milestone-zoom-hint" aria-hidden="true">&#x1F50D; Zoom</span>
+                  </div>
+                </div>
+                <h3 class="milestone-title">100+ Active Members Milestone</h3>
+                <p class="milestone-desc">
+                  Crossed the 100 active member threshold and instituted our structured Senior-to-Junior peer mentorship cohorts, project incubators, and full-stack technical bootcamp series.
+                </p>
+              </div>
+              <div class="milestone-footer">
+                <span class="milestone-meta-chip">👥 100+ Engineers</span>
+                <span>5 Engineering Depts</span>
+              </div>
+            </article>
+
+            <!-- 2025 -->
+            <article class="milestone-card glass-card stagger-item reveal-zoom tilt-card" data-era="2025" aria-label="Milestone 2025: International Recognition">
+              <div>
+                <div class="milestone-card-header">
+                  <span class="milestone-year-badge">2025</span>
+                  <div style="display:flex;align-items:center;gap:8px;">
+                    <span class="milestone-tag">Global Arena</span>
+                    <span class="milestone-zoom-hint" aria-hidden="true">&#x1F50D; Zoom</span>
+                  </div>
+                </div>
+                <h3 class="milestone-title">IEEEXtreme Global Top 100</h3>
+                <p class="milestone-desc">
+                  MBITS competitive programming teams secured a Global Top 100 placement in IEEEXtreme 19.0 out of thousands of universities worldwide. Published 3 peer-reviewed research papers in IEEE conferences.
+                </p>
+              </div>
+              <div class="milestone-footer">
+                <span class="milestone-meta-chip">🌐 Rank #89 Global</span>
+                <span>3 IEEE Publications</span>
+              </div>
+            </article>
+
+            <!-- 2026 -->
+            <article class="milestone-card glass-card current-era stagger-item reveal-zoom tilt-card" data-era="2026" aria-label="Milestone 2026: WebNova and Future">
+              <div>
+                <div class="milestone-card-header">
+                  <span class="milestone-year-badge">2026</span>
+                  <div style="display:flex;align-items:center;gap:8px;">
+                    <span class="milestone-tag" style="color:var(--accent);">Current Era</span>
+                    <span class="milestone-zoom-hint" aria-hidden="true">&#x1F50D; Zoom</span>
+                  </div>
+                </div>
+                <h3 class="milestone-title">WebNova 2026 &amp; National Leadership</h3>
+                <p class="milestone-desc">
+                  Competing in the WebNova Design Sprint with ambitious national events planned, autonomous AI labs, and high-impact industry placement tracks for graduating engineers.
+                </p>
+              </div>
+              <div class="milestone-footer">
+                <span class="milestone-meta-chip" style="background:rgba(200,132,58,0.15);border-color:var(--accent);color:var(--accent);">🚀 WebNova Flagship</span>
+                <span>Active Year</span>
+              </div>
+            </article>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer" role="contentinfo">
+    <div class="footer-glow" aria-hidden="true"></div>
+    <div class="container footer-grid">
+      <div class="footer-brand"><a href="index.html" class="nav-logo footer-logo" aria-label="Home"><svg class="logo-icon" viewBox="0 0 40 40" width="40" height="40" aria-hidden="true"><rect width="40" height="40" rx="8" fill="var(--primary)"/><text x="50%" y="55%" dominant-baseline="middle" text-anchor="middle" font-family="Inter,sans-serif" font-weight="700" font-size="11" fill="#fff">IEEE</text></svg><span class="logo-text">CS <span class="accent">MBITS</span></span></a><p class="footer-tagline">Code<span class="accent-dot">.</span> Connect<span class="accent-dot">.</span> Create<span class="accent-dot">.</span></p><p class="footer-desc">IEEE Computer Society Student Branch<br/>Mar Baselios Institute of Technology &amp; Science, Kerala</p></div>
+      <nav class="footer-links" aria-label="Footer navigation"><h4 class="footer-heading">Quick Links</h4><ul role="list"><li><a href="about.html">About Us</a></li><li><a href="events.html">Events</a></li><li><a href="achievements.html">Achievements</a></li><li><a href="gallery.html">Gallery</a></li><li><a href="team.html">Team</a></li><li><a href="contact.html">Join Us</a></li></ul></nav>
+      <div class="footer-connect"><h4 class="footer-heading">Connect</h4><div class="footer-socials"><a href="https://instagram.com/ieeecsmbits" class="footer-social-link" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>Instagram</a><a href="https://linkedin.com/company/ieeecsmbits" class="footer-social-link" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>LinkedIn</a><a href="https://ieeesbmbits.in" class="footer-social-link" target="_blank" rel="noopener noreferrer" aria-label="Website"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>ieeesbmbits.in</a></div><p class="footer-konami-hint" aria-hidden="true"><kbd>&#8593;&#8593;&#8595;&#8595;&#8592;&#8594;&#8592;&#8594;BA</kbd></p></div>
+    </div>
+    <div class="footer-bottom"><p>&copy; <span id="year"></span> IEEE Computer Society, MBITS Student Branch.</p><p class="footer-built">Built with &#10084;&#65039; for WebNova 2026</p></div>
+  </footer>
+
+  <!-- MILESTONE ZOOM DETAIL MODAL -->
+  <div id="milestone-modal" class="milestone-modal" aria-hidden="true" role="dialog" aria-labelledby="modal-milestone-title">
+    <div class="milestone-modal-backdrop" id="milestone-modal-backdrop"></div>
+    <div class="milestone-modal-content glass-card" role="document">
+      <button class="milestone-modal-close" id="milestone-modal-close" aria-label="Close details">&times;</button>
+      <div class="milestone-modal-header">
+        <span class="milestone-year-badge" id="modal-year-badge">2021</span>
+        <span class="milestone-tag" id="modal-tag">Inception &bull; Charter</span>
+      </div>
+      <h2 class="milestone-modal-title" id="modal-milestone-title">Chapter Founded &amp; Chartered</h2>
+      <div class="milestone-modal-body">
+        <p id="modal-desc" class="milestone-modal-desc"></p>
+        <div class="milestone-modal-metrics" id="modal-metrics"></div>
+      </div>
+      <div class="milestone-modal-footer">
+        <span class="milestone-meta-chip" id="modal-meta-chip">🚩 25 Charter Members</span>
+        <button class="btn btn-ghost" id="modal-close-btn" style="padding:6px 16px;font-size:0.85rem;">Close Zoom View</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="easter-egg" class="easter-egg" aria-hidden="true"><div class="easter-egg-content"><p class="ee-text">&#127918; KONAMI CODE!</p><p class="ee-sub">Tech ninja &#129399; confirmed.</p><p class="ee-code">&#8593; &#8593; &#8595; &#8595; &#8592; &#8594; &#8592; &#8594; B A</p><button class="btn btn-ghost" id="ee-close">Close</button></div></div>
+  <script src="js/script.js"></script>
+</body>
+</html>
